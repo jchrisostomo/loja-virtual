@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 class="mb-4">Seu Carrinho</h2>
+<h2 class="mb-4" style="color: #F075AA;">Seu Carrinho</h2>
+
 {% if cart_items %}
 <div class="table-responsive">
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Preço Unitário</th>
-                <th>Total</th>
+                <th style="background-color: #FFDE95; color: #1E1E1E;">Produto</th>
+                <th style="background-color: #FFDE95; color: #1E1E1E;">Quantidade</th>
+                <th style="background-color: #FFDE95; color: #1E1E1E;">Preço Unitário</th>
+                <th style="background-color: #FFDE95; color: #1E1E1E;">Total</th>
             </tr>
         </thead>
         <tbody>
@@ -25,17 +26,22 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                <td><strong>R$ {{ total }}</strong></td>
+                <td colspan="3" class="text-end" style="background-color: #F075AA; color: white; font-weight: bold;">Total:</td>
+                <td style="background-color: #F075AA; color: white; font-weight: bold;">R$ {{ total }}</td>
             </tr>
         </tfoot>
     </table>
 </div>
+
 <div class="text-end mt-3">
-    <a href="{% url 'checkout' %}" class="btn btn-success">Finalizar Compra</a>
+    <a href="{% url 'checkout' %}" class="btn btn-custom w-100">
+        <i class="fas fa-check-circle"></i> Finalizar Compra
+    </a>
 </div>
+
 {% else %}
-<p>Seu carrinho está vazio.</p>
+<p style="color: #8B8B8B;">Seu carrinho está vazio.</p>
 <a href="{% url 'product_list' %}" class="btn btn-primary">Continuar Comprando</a>
 {% endif %}
+
 {% endblock %}
