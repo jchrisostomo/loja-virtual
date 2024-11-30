@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Seu Carrinho</h2>
+{% if cart_items %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>R$ {{ item.product.price }}</td>
+                <td>R$ {{ item.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                <td><strong>R$ {{ total }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="text-end mt-3">
+    <a href="{% url 'checkout' %}" class="btn btn-success">Finalizar Compra</a>
+</div>
+{% else %}
+<p>Seu carrinho está vazio.</p>
+<a href="{% url 'product_list' %}" class="btn btn-primary">Continuar Comprando</a>
+{% endif %}
+{% endblock %}

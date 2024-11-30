@@ -1,0 +1,36 @@
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Ambiente virtual
+venv/
+ENV/
+env/
+*.env
+
+# Arquivos de configuração do IDE
+.idea/
+.vscode/
+
+# Arquivos de configuração do sistema
+*.swp
+*.swo
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3  # Se você estiver usando SQLite como banco de dados (não versionar)
+*.sqlite3
+media/  # Se você tiver uma pasta de arquivos enviados (uploads)
+
+# Bootstrap
+node_modules/  # Se você usa o npm ou yarn para gerenciar pacotes do Bootstrap
+bower_components/  # Se você usa o Bower para gerenciar pacotes
+
+# Arquivos de configuração do sistema operacional
+.DS_Store  # Arquivo do macOS
+Thumbs.db  # Arquivo do Windows
