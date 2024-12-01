@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['loja-virtual-hhcp.onrender.com']
+ALLOWED_HOSTS = ['loja-virtual-hhcp.onrender.com', '.render.com', 'localhost', '127.0.0.1']
 
 
 INSTALLED_APPS = [
